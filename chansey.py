@@ -47,11 +47,20 @@ def main():
     train_case = args.train_case
     test_case = args.test_case
 
+    dir_syn = './walmart/'
+    dir_model = './walmart/'
+
+    if not os.path.exists(dir_syn):
+        os.makedirs(dir_syn)
+
+    if not os.path.exists(dir_model):
+        os.makedirs(dir_model)
+
     time_stamp = datetime.datetime.now().strftime("-%Y-%m-%d-%H-%M")
     model_id = args.id + time_stamp
     gbl_set_value("depth", args.depth)
-    gbl_set_value("dir_syn", './walmart/')
-    gbl_set_value("dir_model", './walmart/')
+    gbl_set_value("dir_syn", dir_syn)
+    gbl_set_value("dir_model", dir_model)
     gbl_set_value("model_id", model_id)
     gbl_set_value("n_epoch", args.epoch + 1)
     gbl_set_value("n_filter", args.n_filter)
