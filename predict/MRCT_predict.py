@@ -25,11 +25,11 @@ def psnr(y_true, y_pred):
 
 
 def predict_MRCT(model, test_path, tag=''):
-    path_X = glob.glob(test_path + '*Align*.nii')[-1]
+    path_X = glob.glob(test_path + '*Align*.nii*')[-1]
     file_X = nib.load(path_X)
     data_X = file_X.get_fdata()
 
-    path_Y = glob.glob(test_path + '*CT*.nii')[-1]
+    path_Y = glob.glob(test_path + '*CT*.nii*')[-1]
     file_Y = nib.load(path_Y)
     data_Y = file_Y.get_fdata()
 

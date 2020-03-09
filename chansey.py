@@ -72,8 +72,8 @@ def main():
     train_path = './data/MRCT/Case'+str(train_case)+'/'
     test_path = './data/MRCT/Case'+str(test_case)+'/'
 
-    path_X = glob.glob(train_path+'*Align*.nii')[-1]
-    path_Y = glob.glob(train_path+'*CT*.nii')[-1]
+    path_X = glob.glob(train_path+'*Align*.nii*')[-1]
+    path_Y = glob.glob(train_path+'*CT*.nii*')[-1]
 
     file_X = nib.load(path_X)
     file_Y = nib.load(path_Y)
